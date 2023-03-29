@@ -1,0 +1,86 @@
+---------------------------------------------------------------------
+1.Prepare database
+---------------------------------------------------------------------
+
+psql --username=freecodecamp --dbname=postgres
+CREATE DATABASE number_guess;
+\c number_guess
+
+CREATE TABLE users(
+	user_id SERIAL NOT NULL, 
+	username VARCHAR(22) UNIQUE NOT NULL,
+	frequent_games INTEGER DEFAULT 0 NOT NULL
+);
+
+CREATE TABLE games(
+ 	game_id    SERIAL NOT NULL, 
+ 	user_id    INTEGER NOT NULL, 
+ 	best_guess INTEGER DEFAULT 0 NOT NULL
+);
+
+---------------------------------------------------------------------
+2. Primary Key and Foreign Key assignment
+---------------------------------------------------------------------
+
+ALTER TABLE users ADD PRIMARY KEY (user_id)
+ALTER TABLE games ADD PRIMARY KEY (game_id)
+ALTER TABLE games ADD FOREIGN KEY (user_id) REFERENCES users (user_id)
+
+---------------------------------------------------------------------
+3.Compact sql db schema into number_guess.sql
+---------------------------------------------------------------------
+
+quit
+pg_dump -cC --inserts -U freecodecamp number_guess > number_guess.sql
+
+---------------------------------------------------------------------
+4.Prepare git directory
+---------------------------------------------------------------------
+
+mkdir number_guesssing_game
+cd number_guesssing_game
+git init
+git checkout -b main
+
+---------------------------------------------------------------------
+5.Prepare shell script file
+---------------------------------------------------------------------
+
+touch number_guess.sh
+git add number_guess.sh
+git commit -m "Initial commit"
+
+chmod +x number_guess.sh
+git add number_guess.sh
+git commit -m "refactor: give executable permissions on number_guess.sh"
+
+---------------------------------------------------------------------
+6. Copy scipt line by line, meanwhile commit changes on terminal  
+---------------------------------------------------------------------
+a.Create function input name & input number guess
+  1.At number_guess.sh file : Copy function INPUT_NAME() & INPUT_GUESS()
+  2.At terminal, type :
+    git add number_guess.sh
+    git commit -m "feat: create function to input name and input number guess"
+
+b.Create function to check input guess number
+  1.At number_guess.sh file : Copy function CHECK_ANSWER()
+  2.At terminal, type :
+    git add number_guess.sh
+    git commit -m "feat: create function to check the guess number"
+
+c.Create function to save the user
+  1.At number_guess.sh file : Copy function SAVE_USER()
+  2.At terminal, type :
+    git add number_guess.sh
+    git commit -m "feat: create function to save new user"
+
+d.Create function to save the game
+  1.At number_guess.sh file :  copy function SAVE_GAME()
+  2.At terminal, type :
+    git add number_guess.sh
+    git commit -m "feat: create function to save the game"
+
+---------------------------------------------------------------------
+7.Run The Script
+---------------------------------------------------------------------

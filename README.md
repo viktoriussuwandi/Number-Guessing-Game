@@ -1,6 +1,12 @@
 # Number Guessing Game
 #### Open [file `solution.txt`](solution.txt) To follow my terminal command. Solutions divided into several steps :
-    1. 
+    1. Prepare database.
+    2. Primary Key and Foreign Key assignment.
+    3. Compact sql db schema into number_guess.sql.
+    4. Prepare git directory.
+    5. Prepare shell script file.
+    6. Copy scipt line by line, meanwhile commit changes on terminal.
+    7. Run The Script.
 
 #### Solution can be found on : [https://replit.com/@ViktoriusSuwand/Number-Guessing-Game](https://replit.com/@ViktoriusSuwand/Number-Guessing-Game)
 

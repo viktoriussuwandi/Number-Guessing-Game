@@ -8,9 +8,6 @@
     6. Copy scipt line by line, meanwhile commit changes on terminal.
     7. Run The Script.
 
-#### Solution can be found on : [https://replit.com/@ViktoriusSuwand/Number-Guessing-Game](https://replit.com/@ViktoriusSuwand/Number-Guessing-Game)
-
-
 #### Documentation can be found on : [https://github.com/viktoriussuwandi/Number-Guessing-Game](https://github.com/viktoriussuwandi/Number-Guessing-Game)
 
 This is the result to complete the Number Guessing Game project. 
